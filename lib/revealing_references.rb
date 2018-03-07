@@ -7,8 +7,13 @@ class RevealingReferences
 
   def diameters
     wheels.collect do |wheel|
+      diameter(wheel)
       wheel.rim + (wheel.tire * 2)
     end
+  end
+
+  def diameter(wheel)
+    wheel.rim + (wheel.tire * 2)
   end
 
   Wheel = Struct.new(:rim, :tire)
@@ -24,6 +29,6 @@ class RevealingReferences
   end
 
   def gear_inches
-    ratio * (rim + (tire * 2))
+    ratio * diameter
   end
 end
