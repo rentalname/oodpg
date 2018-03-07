@@ -1,9 +1,4 @@
 require_relative 'lib/gear'
 require_relative 'lib/wheel'
 
-wheel = Wheel.new(26, 1.5)
-puts wheel.circumference
-
-puts Gear.new(52, 11, wheel).gear_inches
-
-puts Gear.new(52, 11).ratio
+puts Gear.new(52, 11, 26, 1.5).gear_inches
